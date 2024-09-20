@@ -43,6 +43,9 @@ This will result in a binary `build/tmit-star`.
 <summary>
 bash scripts
 </summary>
+
+#### gl settings
+
 ```bash
 sudo apt install -y libglew-dev
 sudo apt install -y libglfw3 libglfw3-dev
@@ -85,6 +88,16 @@ Cflags: -I${includedir}
 
 install autodiff in advance
 
+for building autodiff install Catch2 with over version 3.
+see [here](https://github.com/catchorg/Catch2/blob/devel/docs/cmake-integration.md#installing-catch2-from-git-repository)
+
+```bash
+git clone https://github.com/catchorg/Catch2.git
+cd Catch2
+cmake -B build -S . -DBUILD_TESTING=OFF
+sudo cmake --build build/ --target install
+```
+
 ```bash
 git clone git@github.com:autodiff/autodiff
 ```
@@ -99,8 +112,6 @@ mkdir .build && cd .build
 cmake ..
 sudo cmake --build . --target install
 ```
-
-
 
 </details>
 
