@@ -37,6 +37,42 @@ For the basic optimized build, use `./build.sh release --lto`; the script also s
 
 This will result in a binary `build/tmit-star`.
 
+### Dependency installation
+
+<details>
+<summary>
+bash scripts
+</summary>
+```bash
+sudo apt install -y libglew-dev
+sudo apt install -y libglfw3 libglfw3-dev
+sudo apt install -y libglm-dev
+```
+#### install autodiff
+
+install autodiff in advance
+
+```bash
+git clone git@github.com:autodiff/autodiff
+```
+after cloning, modify "python/package/CMakeLists.txt" to change as following:
+${PYTHON_EXECUTABLE} -> ${PythonEXECUTABLE}
+
+see details [here](https://github.com/autodiff/autodiff/issues/305#issuecomment-2028248898)
+
+```bash
+cd autodiff
+mkdir .build && cd .build
+cmake ..
+sudo cmake --build . --target install
+```
+
+
+</details>
+
+
+
+
 ## Usage
 
 You can run the planner directly, but the `run.sh` script provides a more convenient interface.
