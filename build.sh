@@ -45,5 +45,7 @@ if [ "${#meson_args}" -gt 0 ]; then
 	meson configure build "${meson_args[@]}" -Db_ndebug=if-release
 fi
 
+export LIBRARY_PATH=/usr/local/lib
+
 # Compile
 meson compile -C build

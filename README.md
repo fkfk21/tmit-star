@@ -48,6 +48,39 @@ sudo apt install -y libglew-dev
 sudo apt install -y libglfw3 libglfw3-dev
 sudo apt install -y libglm-dev
 ```
+
+#### install z3
+
+must install z3 latest tag (https://github.com/Z3Prover/z3/tree/z3-4.13.0)
+and make install 
+
+```bash
+git clone https://github.com/Z3Prover/z3 -b z3-4.13.0 --depth 1
+cd z3
+python3 scripts/mk_make.py --prefix=/usr/local
+cd build
+make -j 24
+sudo make install
+```
+add following file as /usr/local/lib/pkgconfig/z3.pc
+```
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=${exec_prefix}/lib
+sharedlibdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: z3
+Description: The Z3 Theorem Prover
+Version: 4.13.0
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz3
+Cflags: -I${includedir}
+```
+
+
+
 #### install autodiff
 
 install autodiff in advance
@@ -66,6 +99,7 @@ mkdir .build && cd .build
 cmake ..
 sudo cmake --build . --target install
 ```
+
 
 
 </details>

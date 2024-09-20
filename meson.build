@@ -14,6 +14,7 @@ endif
 
 # Hack because the current OMPL release isn't new enough
 ompl_cmake_opts = cmake.subproject_options()
+ompl_cmake_opts.append_compile_args('cpp', '-Wno-gnu-zero-variadic-macro-arguments')
 ompl_cmake_opts.set_override_option('cpp_std', 'c++20')
 ompl_cmake = cmake.subproject('ompl', options: ompl_cmake_opts)
 ompl = ompl_cmake.dependency('ompl')
@@ -41,7 +42,7 @@ dependencies = [
   dependency('spdlog'),
   dependency('tinyobjloader'),
   dependency('urdfdom'),
-  dependency('z3'),
+  dependency('z3', version: '>=4.13.0'),
   ompl
 ]
 
