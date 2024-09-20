@@ -1,0 +1,23 @@
+{
+  "configurations": [
+      {
+        "name": "Linux",
+        "includePath": [
+            "/usr/local/include",
+            "${workspaceFolder}/util",
+            "${workspaceFolder}/planner",
+            "subprojects",
+            "subprojects/robin_hood/src/include",
+            "/usr/include/eigen3",
+            "/usr/include/bullet",
+            "/usr/include/luajit-2.1"
+        ],
+        "defines": [],
+        "compilerPath": "/usr/bin/clang++",
+        "cStandard": "c23",
+        "cppStandard": "c++23",
+        "intelliSenseMode": "clang-x64"
+      }
+  ],
+  "version": 4
+}
