@@ -18,6 +18,7 @@ _deps
 *.lo
 *.o
 *.obj
+!models/meshes/*.obj
 
 # Precompiled Headers
 *.gch
