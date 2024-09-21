@@ -195,6 +195,7 @@ build_collision_blocklists(const std::filesystem::path& blocklist_file,
   lazycsv::parser<lazycsv::mmap_source,
                   lazycsv::has_header<false>,
                   lazycsv::delimiter<','>,
+                  lazycsv::quote_char<'"'>,
                   lazycsv::trim_chars<' ', '\t', '\n', '\r'>>
   csv(blocklist_file.c_str());
   unsigned int row_count = 0;
