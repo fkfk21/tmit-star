@@ -13,11 +13,12 @@ if not autodiff.found()
 endif
 
 # Hack because the current OMPL release isn't new enough
-ompl_cmake_opts = cmake.subproject_options()
-ompl_cmake_opts.append_compile_args('cpp', '-Wno-gnu-zero-variadic-macro-arguments')
-ompl_cmake_opts.set_override_option('cpp_std', 'c++20')
-ompl_cmake = cmake.subproject('ompl', options: ompl_cmake_opts)
-ompl = ompl_cmake.dependency('ompl')
+# ompl_cmake_opts = cmake.subproject_options()
+# ompl_cmake_opts.append_compile_args('cpp', '-Wno-gnu-zero-variadic-macro-arguments')
+# ompl_cmake_opts.set_override_option('cpp_std', 'c++20')
+# ompl_cmake = cmake.subproject('ompl', options: ompl_cmake_opts)
+# ompl = ompl_cmake.dependency('ompl')
+ompl = dependency('ompl', version: '>=1.6.0')
 
 dependencies = [
   autodiff,
