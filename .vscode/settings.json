@@ -1,3 +1,13 @@
 {
-  
+  "C_Cpp.default.compileCommands": "/home/fukuda/tamp_ws/src/tmit-star/builddir/compile_commands.json",
+  "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
+  "git.ignoredRepositories": [
+    "subprojects/date",
+    "subprojects/dbg",
+    "subprojects/filestl",
+    "subprojects/lazycsv",
+    "subprojects/ompl",
+    "subprojects/robin_hood",
+    "subprojects/sexplib",
+  ]
 }

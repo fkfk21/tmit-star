@@ -240,7 +240,7 @@ build_collision_blocklists(const std::filesystem::path& blocklist_file,
 }
 
 namespace planner {
-constexpr double COLLISION_PENETRATION_DISTANCE = 0.029;
+constexpr double COLLISION_PENETRATION_DISTANCE = 0.05;
 bool CollisionObject::checkCollideWithOverride(const btCollisionObject* co) const {
   const auto* cco = static_cast<const CollisionObject*>(co);
   // Forbid collisions with parent

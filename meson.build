@@ -58,7 +58,6 @@ cpp_args = [
 link_args = ['-fsanitize-recover=all']
 
 source_files = [
-  'tmit-star.cc',
   'experiments/experiments.cc',
   'input/input.cc',
   'input/pddl.cc',
@@ -85,10 +84,19 @@ source_files = [
 ]
 
 # Main executable
-tmit_star = executable('tmit-star',
-  source_files,
+executable('tmit-star',
+  source_files + ['tmit-star.cc'],
   include_directories: ['experiments', 'input', 'output', 'planner', 'util', 'itstar'],
   dependencies: dependencies,
   cpp_args: cpp_args,
   link_args: link_args
 )
+
+# # Debug executable
+# executable('debug-viewer',
+#   source_files,
+#   include_directories: ['experiments', 'input', 'output', 'planner', 'util', 'itstar'],
+#   dependencies: dependencies,
+#   cpp_args: cpp_args,
+#   link_args: link_args
+# )
